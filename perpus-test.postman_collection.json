@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "0a072fc2-2590-402f-97c5-132236de5c61",
+    "name": "perpus-test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58519361",
+    "_collection_link": "https://go.postman.co/collection/58519361-0a072fc2-2590-402f-97c5-132236de5c61?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "CREATE BUKU",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0e7i}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"judul_buku\": \"A\",\r\n  \"penulis\": \"\",\r\n  \"tahun_terbit\": \"2000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/buku",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "buku"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LIST BUKU (ID)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0e7i}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"clarissa@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/buku/123abc",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "buku",
+            "123abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UPDATE BUKU",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"judul_buku\": \"Laskar Pelangi Edisi Revisi\",\r\n  \"penulis\": \"Andrea Hirata\",\r\n  \"tahun_terbit\": 2008\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/buku/6aed9259448ef0b115cfc7a6",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "buku",
+            "6aed9259448ef0b115cfc7a6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE BUKU",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/buku/6aed9259448ef0b115cfc7a6",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "buku",
+            "6aed9259448ef0b115cfc7a6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LIST BUKU (FULL)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0e7i}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"clarissa@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/buku?page=2&limit=2",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "buku"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "bumi",
+              "disabled": true
+            },
+            {
+              "key": "sort",
+              "value": "asc",
+              "disabled": true
+            },
+            {
+              "key": "sortBy",
+              "value": "tahun_terbit",
+              "disabled": true
+            },
+            {
+              "key": "page",
+              "value": "2"
+            },
+            {
+              "key": "limit",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
